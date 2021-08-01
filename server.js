@@ -1,6 +1,7 @@
 const express=require('express')
+const bodyParser=require('body-parser')
 const app=express()
-
+app.use(bodyParser.json())
 
 app.get('/',(req,res)=>{
  res.send('hamara homepage')
@@ -14,6 +15,18 @@ app.get('/players',(req,res)=>{
     res.send(players);
 })
 
+app.post('/login',(req,res)=>{
+  var username=req.body.username
+  var password=req.body.password
+
+  if(username=='javascript' && password=='satkar'){
+      res.send('login successfull');
+  }
+  else{
+      res.send('login failed')
+  }
+
+})
 
 
 app.listen(5000, () => console.log('Server is started on http://localhost:8080'));
