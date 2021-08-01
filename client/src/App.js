@@ -3,7 +3,7 @@ import './App.css';
 import axios from 'axios';
 function App() {
   function getdatafromNode(){
-      axios.get('/services')
+      axios.get('/players')
        .then(res=>console.log(res))
        .catch(err=>console.log(err))
   }

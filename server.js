@@ -9,6 +9,10 @@ app.get('/',(req,res)=>{
 app.get('/services',(req,res)=>{
     res.send('oi oi oi mate mate')
 })
+app.get('/players',(req,res)=>{
+    const players=['dhoni,sachin,ronaldo']
+    res.send(players);
+})
 
 
 
